@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProductDetailView: View{
+    @State private var showingAlert: Bool = false
     @State private var quantity:Int = 1
     let product: Product //상품 정보를 전달받기 위한 프로퍼티 선언
     
@@ -17,6 +18,8 @@ struct ProductDetailView: View{
             orderView //상품 정보를 출력하고 그 상품을 주문하기 위한 뷰
         }
         .edgesIgnoringSafeArea(.top)
+        .alert(isPresented: $showingAlert) { confirmAlert }
+        //alert 수식어 추가
     }
     
     var productImage: some View{
@@ -54,10 +57,11 @@ struct ProductDetailView: View{
                 
                 Spacer()
                 
-//                Image(systemName: "heart") //즐겨 찾기 버튼
-//                    .imageScale(.large)
-//                    .foregroundColor(Color.peach)
-//                    .frame(width: 32, height: 32)
+                //                Image(systemName: "heart") //즐겨 찾기 버튼
+                //                    .imageScale(.large)
+                //                    .foregroundColor(Color.peach)
+                //                    .frame(width: 32, height: 32)
+                
                 FavoriteButton(product: product)
             }
             
@@ -92,15 +96,28 @@ struct ProductDetailView: View{
         .foregroundColor(.black)
     }
     
-    var placeOrderButton: some View{
-        Button(action: { }) {
+    var placeOrderButton: some View {
+        Button(action: {
+            self.showingAlert = true
+        }) {
             Capsule()
-                .fill(Color.peach) //너비는 주어진 공간을 최대로 사용하고 높이는 최소, 최대치 지정
+                .fill(Color.peach)
                 .frame(maxWidth: .infinity, minHeight: 30, maxHeight: 55)
                 .overlay(Text("주문하기")
-                            .font(.system(size:20)).fontWeight(.medium)).foregroundColor(Color.white)
+                            .font(.system(size: 20)).fontWeight(.medium)
+                            .foregroundColor(Color.white))
                 .padding(.vertical, 8)
         }
+    }
+    
+    var confirmAlert: Alert{
+        Alert(title: Text("주문 확인"),
+              message: Text("\(product.name)을 \(quantity)개 구매하겠습니까?"),
+              primaryButton: .default(Text("확인"), action: {
+                // 주문 기능 구현
+              }),
+              secondaryButton: .cancel(Text("취소"))
+        )
     }
 }
 
