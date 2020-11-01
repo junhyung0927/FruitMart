@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProductDetailView: View{
+    @State private var quantity:Int = 1
     let product: Product //상품 정보를 전달받기 위한 프로퍼티 선언
     
     var body: some View{
@@ -79,12 +80,13 @@ struct ProductDetailView: View{
     }
     
     var priceInfo: some View {
-        
+        let price = quantity * product.price
         return HStack {
             (Text("₩")
-                + Text("\(product.price)").font(.title)
+                + Text("\(price)").font(.title)
             ).fontWeight(.medium)
             Spacer()
+            QuantitySelector(quantity: $quantity)
         }
         .foregroundColor(.black)
     }

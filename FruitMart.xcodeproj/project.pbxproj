@@ -10,6 +10,7 @@
 		A9586A4D254EAA9100EC9B35 /* ProductData.json in Resources */ = {isa = PBXBuildFile; fileRef = A9586A4C254EAA9100EC9B35 /* ProductData.json */; };
 		A9586A51254EAB9300EC9B35 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9586A50254EAB9300EC9B35 /* ProductDetailView.swift */; };
 		A9586A55254EB4F800EC9B35 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9586A54254EB4F800EC9B35 /* Preview.swift */; };
+		A9586A59254EBB1500EC9B35 /* QuantitySelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9586A58254EBB1500EC9B35 /* QuantitySelector.swift */; };
 		A990D890254E9E8A00450D55 /* FruitMartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A990D88F254E9E8A00450D55 /* FruitMartApp.swift */; };
 		A990D892254E9E8A00450D55 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = A990D891254E9E8A00450D55 /* Home.swift */; };
 		A990D894254E9E8B00450D55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A990D893254E9E8B00450D55 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		A9586A4C254EAA9100EC9B35 /* ProductData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ProductData.json; path = ../../../../iosGitFile/SweetSwiftUI/FruitMart/Resources/ProductData.json; sourceTree = "<group>"; };
 		A9586A50254EAB9300EC9B35 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		A9586A54254EB4F800EC9B35 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
+		A9586A58254EBB1500EC9B35 /* QuantitySelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantitySelector.swift; sourceTree = "<group>"; };
 		A990D88C254E9E8A00450D55 /* FruitMart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruitMart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A990D88F254E9E8A00450D55 /* FruitMartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitMartApp.swift; sourceTree = "<group>"; };
 		A990D891254E9E8A00450D55 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				A990D891254E9E8A00450D55 /* Home.swift */,
 				A990D8BC254EA18200450D55 /* ProductRow.swift */,
 				A9586A50254EAB9300EC9B35 /* ProductDetailView.swift */,
+				A9586A58254EBB1500EC9B35 /* QuantitySelector.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				A990D8B9254EA13600450D55 /* Store.swift in Sources */,
 				A990D8BD254EA18200450D55 /* ProductRow.swift in Sources */,
 				A990D890254E9E8A00450D55 /* FruitMartApp.swift in Sources */,
+				A9586A59254EBB1500EC9B35 /* QuantitySelector.swift in Sources */,
 				A9586A55254EB4F800EC9B35 /* Preview.swift in Sources */,
 				A990D8B2254EA10B00450D55 /* BundleExtension.swift in Sources */,
 			);
