@@ -11,7 +11,7 @@ import SwiftUI
 struct FruitMartApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let rootView = Home(store: Store())
         }
     }
 }
