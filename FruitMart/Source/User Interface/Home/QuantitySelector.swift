@@ -2,6 +2,9 @@ import SwiftUI
 
 struct QuantitySelector : View{
     @Binding var quantity: Int
+    private let softFeedback = UIImpactFeedbackGenerator(style: .soft)
+    private let rigidFeedback = UIImpactFeedbackGenerator(style: .rigid)
+    
     var range: ClosedRange<Int> = 1...20
     // 수량 선택 가능 범위
     
@@ -34,6 +37,11 @@ struct QuantitySelector : View{
     private func changeQuantity(_ num: Int){
         if range ~= quantity + num {
             quantity += num
+            softFeedback.prepare()
+            softFeedback.impactOccurred(intensity: 0.8)
+        } else{
+            rigidFeedback.prepare()
+            rigidFeedback.impactOccurred()
         }
     }
 }
