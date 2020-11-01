@@ -12,6 +12,9 @@ final class Store : ObservableObject{
         let nextID = Order.orderSequence.next()!
         let order = Order(id: nextID, product: product, quantitiy: quantity)
         orders.append(order)
+        
+        print(orders)
+        
         //어떤 상품을 받으면 placeOrder 메서드에 주문한 상품과 수량 정보를 받아서 orders 프로퍼티에 저장된다.
     }
 }
