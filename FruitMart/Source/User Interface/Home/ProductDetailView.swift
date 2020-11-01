@@ -54,10 +54,11 @@ struct ProductDetailView: View{
                 
                 Spacer()
                 
-                Image(systemName: "heart") //즐겨 찾기 버튼
-                    .imageScale(.large)
-                    .foregroundColor(Color.peach)
-                    .frame(width: 32, height: 32)
+//                Image(systemName: "heart") //즐겨 찾기 버튼
+//                    .imageScale(.large)
+//                    .foregroundColor(Color.peach)
+//                    .frame(width: 32, height: 32)
+                FavoriteButton(product: product)
             }
             
             Text(splitText(product.description)) //상품 설명

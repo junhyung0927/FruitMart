@@ -64,10 +64,12 @@ private extension ProductRow{
             //스택에서 view들 사이의 공간을 추가하기 위한 컴포넌트. 최솟값만 지정할 수 있다.
             //간격은 최솟값을 지키면서 부모 스택의 width와 함께 추가된 view에 따라서 자유자재로 늘어나거나 줄어든다.
             
-            Image(systemName: "heart")
-                .imageScale(.large)
-                .foregroundColor(Color.peach)
-                .frame(width: 32, height: 32)
+//            Image(systemName: "heart")
+//                .imageScale(.large)
+//                .foregroundColor(Color.peach)
+//                .frame(width: 32, height: 32)
+            
+            FavoriteButton(product: product)
             
             Image(systemName: "cart")
                 .foregroundColor(Color.peach)
