@@ -19,6 +19,7 @@ struct FruitMartApp: App{
     
     //ios 14 SwiftUI
     init(){
+        
         //large 디스플레이 모드에서 적용
         UINavigationBar.appearance().largeTitleTextAttributes = [
             .foregroundColor: UIColor(named: "peach")!
@@ -28,5 +29,7 @@ struct FruitMartApp: App{
         UINavigationBar.appearance().titleTextAttributes = [
             .foregroundColor: UIColor(named: "peach")!
         ]
+        
+        UITableView.appearance().backgroundColor = .clear
     }
 }

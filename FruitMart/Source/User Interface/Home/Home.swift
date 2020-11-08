@@ -14,7 +14,7 @@ struct Home: View {
     
     var body: some View {
         NavigationView{
-            VStack{
+            VStack(spacing: 0){
                 //즐겨찾기 상품이 없다면 무시
                 if showFavorite {
                     favoriteProducts //구현해 둔 스크롤 뷰에 해당하는 프로퍼티
@@ -26,7 +26,8 @@ struct Home: View {
         }
         .popupOverContext(item: $quickOrder, style: .blur,content: popupMessage(product:))
     }
-    
+}
+private extension Home {
     func popupMessage(product: Product) -> some View {
         let name = product.name.split(separator: " ").last!
         return VStack{
@@ -51,15 +52,19 @@ struct Home: View {
         Color.primary
             .opacity(0.3)
             .frame(maxWidth: .infinity, maxHeight: 1)
-            
+        
     }
     
     //body에 작성되어 있던 기존 코드 추출
     var productList: some View{
-        List(store.products) { product in
-            NavigationLink(destination: ProductDetailView(product: product)){
-                ProductRow(product: product, quickOrder: self.$quickOrder)
+        List {
+            ForEach(store.products) { product in
+                NavigationLink(destination: ProductDetailView(product: product)){
+                    ProductRow(product: product, quickOrder: self.$quickOrder)
+                }
             }
+            .listRowBackground(Color.background)
+            .background(Color.background)
             .buttonStyle(PlainButtonStyle())
         }
     }
@@ -68,8 +73,8 @@ struct Home: View {
     var showFavorite: Bool{
         !store.products.filter({ $0.isFavorite}).isEmpty
     }
+    
 }
-
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         Preview(source: Home())

@@ -47,7 +47,7 @@ struct ProductDetailView: View{
             }
             //지오메트리 리더가 차지하는 뷰의 높이보다 VStack의 높이가 10 크도록 지정
             .padding(32)
-            .frame(height: $0.size.height + 10)
+            .frame(height: $0.size.height - 30)
             .background(Color.white)
             .cornerRadius(16)
             .shadow(color: Color.black.opacity(0.2), radius:10, x:0, y:-5)
