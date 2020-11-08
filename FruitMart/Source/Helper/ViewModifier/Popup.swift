@@ -75,19 +75,19 @@ fileprivate struct PopupItem<Item: Identifiable>: ViewModifier {
 //.modifier 대신 popup 과 같이 익숙한 방식으로 사용할 수 있도록 뷰 프로토콜 확장
 extension View{
     func popup<Content: View>(
-      isPresented: Binding<Bool>,
-      size: CGSize? = nil,
-      style: PopupStyle = .none,
-      @ViewBuilder content: () -> Content
+        isPresented: Binding<Bool>,
+        size: CGSize? = nil,
+        style: PopupStyle = .none,
+        @ViewBuilder content: () -> Content
     ) -> some View {
-      if isPresented.wrappedValue {
-        let popup = Popup(size: size, style: style, message: content())
-        let popupToggle = PopupToggle(isPresented: isPresented)
-        let modifiedContent = self.modifier(popup).modifier(popupToggle)
-        return AnyView(modifiedContent)
-      } else {
-        return AnyView(self)
-      }
+        if isPresented.wrappedValue {
+            let popup = Popup(size: size, style: style, message: content())
+            let popupToggle = PopupToggle(isPresented: isPresented)
+            let modifiedContent = self.modifier(popup).modifier(popupToggle)
+            return AnyView(modifiedContent)
+        } else {
+            return AnyView(self)
+        }
     }
     
     func popup<Content: View, Item: Identifiable>(
@@ -104,6 +104,27 @@ extension View{
             return AnyView(modifiedContent)
         } else {
             return AnyView(self)
+        }
+    }
+    
+    func popupOverContext<Item: Identifiable, Content: View>(
+        item: Binding<Item?>,
+        size: CGSize? = nil,
+        style: PopupStyle = .none,
+        ignoringEdges edges: Edge.Set = .all,
+        @ViewBuilder content: (Item) -> Content
+    ) -> some View {
+        let isNonNil = item.wrappedValue != nil
+        return ZStack{
+            self
+                .blur(radius: isNonNil && style == .blur ? 2 : 0)
+            
+            if isNonNil{ //아이템이 있을 경우에만
+                Color.black
+                    .luminanceToAlpha()
+                    .popup(item: item, size: size, style: style, content: content)
+                    .edgesIgnoringSafeArea(edges)
+            }
         }
     }
 }

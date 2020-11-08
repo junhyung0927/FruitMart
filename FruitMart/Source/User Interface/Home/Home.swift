@@ -21,7 +21,7 @@ struct Home: View {
             }
             .navigationBarTitle("과일마트")
         }
-        .popup(item: $quickOrder, content: popupMessage(product:))
+        .popupOverContext(item: $quickOrder, style: .blur,content: popupMessage(product:))
     }
     
     func popupMessage(product: Product) -> some View {
