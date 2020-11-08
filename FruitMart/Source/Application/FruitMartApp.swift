@@ -12,7 +12,7 @@ struct FruitMartApp: App{
     var body: some Scene {
         //WindowGroup은 SwiftUI View를 담고 있는 container scene 같은 것.
         WindowGroup {
-            let rootView = Home()
+            let rootView = MainTabView()
                 .environmentObject(Store())
         }
     }
