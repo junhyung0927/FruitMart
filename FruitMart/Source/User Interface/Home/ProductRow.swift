@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ProductRow: View {
+    @EnvironmentObject var store: Store
     let product: Product
+    @Binding var quickOrder: Product?
     
     var body: some View {
         HStack{
@@ -81,7 +83,13 @@ private extension ProductRow{
             
             Symbol("cart", color: .peach)
                 .frame(width: 32, height: 32)
+                .onTapGesture { self.orderProduct() } //빠른 주문 수행
         }
+    }
+    
+    func orderProduct() {
+        quickOrder = product //주문 상품 저장. 팝업창 출력 조건
+        store.placeOrder(product: product, quantity: 1)
     }
 }
 
@@ -90,9 +98,9 @@ struct ProductRow_Previews: PreviewProvider {
     static var previews: some View{
         Group{
             ForEach(productSamples){
-                ProductRow(product: $0)
+                ProductRow(product: $0, quickOrder: .constant(nil))
             }
-            ProductRow(product: productSamples[0])
+            ProductRow(product: productSamples[0], quickOrder: .constant(nil))
                 .preferredColorScheme(.dark)
         }
         .padding()
