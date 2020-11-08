@@ -8,17 +8,21 @@
 import SwiftUI
 
 struct ProductDetailView: View{
-    @State private var showingAlert: Bool = false
-    @State private var quantity:Int = 1
     @EnvironmentObject private var store: Store
-    
     let product: Product //상품 정보를 전달받기 위한 프로퍼티 선언
     
-    var body: some View{
-        VStack(spacing: 0){
+    @State private var showingAlert: Bool = false
+    @State private var quantity:Int = 1
+    @State private var showingPopup: Bool = false
+    
+    var body: some View {
+        VStack(spacing: 0) {
             productImage //상품이미지
             orderView //상품 정보를 출력하고 그 상품을 주문하기 위한 뷰
         }
+        //팝업 크기 지정 및 dimmed 스타일 적용
+//        .modifier(Popup(size: CGSize(width: 200, height: 200), style: .dimmed, message: Text("팝업")))
+        .popup(isPresented: $showingPopup, style: .dimmed) { OrderCompltedMessasge() }
         .edgesIgnoringSafeArea(.top)
         .alert(isPresented: $showingAlert) { confirmAlert }
         //alert 수식어 추가
@@ -26,9 +30,8 @@ struct ProductDetailView: View{
     
     var productImage: some View{
         GeometryReader { _ in
-//            Image(self.product.imageName)
-//                .resizable()
-//                .scaledToFill()
+            //                        Image(self.product.imageName)
+            //                            .resizable()
             ResizedImage(self.product.imageName)
         }
     }
@@ -43,7 +46,7 @@ struct ProductDetailView: View{
                 self.placeOrderButton //주문하기 버튼
             }
             //지오메트리 리더가 차지하는 뷰의 높이보다 VStack의 높이가 10 크도록 지정
-            .frame(height: $0.size.height + 10)
+            .frame(height: $0.size.height - 10)
             .padding(32)
             .background(Color.white)
             .cornerRadius(16)
@@ -59,11 +62,6 @@ struct ProductDetailView: View{
                     .foregroundColor(.black)
                 
                 Spacer()
-                
-                //                Image(systemName: "heart") //즐겨 찾기 버튼
-                //                    .imageScale(.large)
-                //                    .foregroundColor(Color.peach)
-                //                    .frame(width: 32, height: 32)
                 
                 FavoriteButton(product: product)
             }
@@ -111,7 +109,7 @@ struct ProductDetailView: View{
                             .foregroundColor(Color.white))
                 .padding(.vertical, 8)
         }
-            .buttonStyle(ShrinkButtonStyle()) //커스텀 버튼 스타일 적용
+        .buttonStyle(ShrinkButtonStyle()) //커스텀 버튼 스타일 적용
     }
     
     var confirmAlert: Alert{
@@ -127,6 +125,7 @@ struct ProductDetailView: View{
     func placeOrder(){
         //상품과 수량 정보를 placeOrder 메서드에 인수로 전달
         store.placeOrder(product: product, quantity: quantity)
+        showingPopup = true
     }
 }
 
