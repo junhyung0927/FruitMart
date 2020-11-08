@@ -25,10 +25,14 @@ struct ProductRow: View {
 
 private extension ProductRow{
     var productImage: some View{
-        Image(product.imageName)
-            .resizable()
-            .scaledToFill()
-            .frame(width: 140)
+//        Image(product.imageName)
+//            .resizable()
+//            .scaledToFill()
+//            .frame(width: 140)
+//            .clipped()
+        
+        ResizedImage(self.product.imageName)
+            .frame(width:140)
             .clipped()
     }
     
@@ -71,8 +75,11 @@ private extension ProductRow{
             
             FavoriteButton(product: product)
             
-            Image(systemName: "cart")
-                .foregroundColor(Color.peach)
+//            Image(systemName: "cart")
+//                .foregroundColor(Color.peach)
+//                .frame(width: 32, height: 32)
+            
+            Symbol("cart", color: .peach)
                 .frame(width: 32, height: 32)
         }
     }

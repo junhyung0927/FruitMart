@@ -11,8 +11,10 @@ struct QuantitySelector : View{
     var body: some View{
         HStack{
             Button(action: {self.changeQuantity(-1) }){
-                Image(systemName: "minus.circle.fill")
-                    .imageScale(.large)
+//                Image(systemName: "minus.circle.fill")
+//                    .imageScale(.large)
+//                    .padding()
+                Symbol("minus.circle.fill", scale: .large)
                     .padding()
             }
             .foregroundColor(Color.gray.opacity(0.5))
@@ -25,8 +27,7 @@ struct QuantitySelector : View{
             //현재 수량을 나타낼 텍스트
             
             Button(action: {self.changeQuantity(1) }) {
-                Image(systemName: "plus.circle.fill")
-                    .imageScale(.large)
+                Symbol("plus.circle.fill", scale: .large)
                     .padding()
             }
             .foregroundColor(Color.gray.opacity(0.5))
