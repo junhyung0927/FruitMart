@@ -46,8 +46,8 @@ struct ProductDetailView: View{
                 self.placeOrderButton //주문하기 버튼
             }
             //지오메트리 리더가 차지하는 뷰의 높이보다 VStack의 높이가 10 크도록 지정
-            .frame(height: $0.size.height - 10)
             .padding(32)
+            .frame(height: $0.size.height + 10)
             .background(Color.white)
             .cornerRadius(16)
             .shadow(color: Color.black.opacity(0.2), radius:10, x:0, y:-5)
