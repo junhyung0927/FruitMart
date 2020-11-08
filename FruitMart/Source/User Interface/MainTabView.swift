@@ -10,12 +10,15 @@ struct MainTabView: View{
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            home
-            recipe
-            gallery
-            myPage
+            Group{
+                home
+                recipe
+                gallery
+                myPage
+            }
+            .accentColor(.primary)
         }
-        
+        .accentColor(.peach)
     }
 }
 
@@ -56,8 +59,8 @@ private extension MainTabView{
 }
 
 struct MainTabView_Previews: PreviewProvider {
-  static var previews: some View {
-    Preview(source: MainTabView())
-      .environmentObject(Store())
-  }
+    static var previews: some View {
+        Preview(source: MainTabView())
+            .environmentObject(Store())
+    }
 }
