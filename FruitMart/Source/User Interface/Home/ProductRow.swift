@@ -27,11 +27,11 @@ struct ProductRow: View {
 
 private extension ProductRow{
     var productImage: some View{
-//        Image(product.imageName)
-//            .resizable()
-//            .scaledToFill()
-//            .frame(width: 140)
-//            .clipped()
+        /*Image(product.imageName)
+            .resizable()
+            .scaledToFill()
+            .frame(width: 140)
+            .clipped()*/
         
         ResizedImage(self.product.imageName)
             .frame(width:140)
@@ -40,14 +40,14 @@ private extension ProductRow{
     
     var productDescription: some View{
         VStack{
-            //상품명
+            ///상품명
             VStack( alignment: .leading){
                 Text(product.name)
                     .font(.headline)
                     .fontWeight(.medium)
                     .padding(.bottom, 6)
                 
-                //상품 설명
+                ///상품 설명
                 Text(product.description)
                     .font(.footnote)
                     .foregroundColor(Color.secondaryText)
@@ -62,24 +62,14 @@ private extension ProductRow{
     
     var footerView: some View{
         HStack(spacing: 0){
-            //가격정보와 버튼
+            ///가격정보와 버튼
             Text("$").font(.footnote)
                 + Text("\(product.price)").font(.headline)
             
+            ///스택에서 view들 사이의 공간을 추가하기 위한 컴포넌트. 최솟값만 지정할 수 .간격은 최솟값을 지키면서 부모 스택의 width와 함께 추가된 view에 따라서 자유자재로 늘어나거나 줄어든다.
             Spacer()
-            //스택에서 view들 사이의 공간을 추가하기 위한 컴포넌트. 최솟값만 지정할 수 있다.
-            //간격은 최솟값을 지키면서 부모 스택의 width와 함께 추가된 view에 따라서 자유자재로 늘어나거나 줄어든다.
-            
-//            Image(systemName: "heart")
-//                .imageScale(.large)
-//                .foregroundColor(Color.peach)
-//                .frame(width: 32, height: 32)
             
             FavoriteButton(product: product)
-            
-//            Image(systemName: "cart")
-//                .foregroundColor(Color.peach)
-//                .frame(width: 32, height: 32)
             
             Symbol("cart", color: .peach)
                 .frame(width: 32, height: 32)
@@ -88,7 +78,8 @@ private extension ProductRow{
     }
     
     func orderProduct() {
-        quickOrder = product //주문 상품 저장. 팝업창 출력 조건
+        ///주문 상품 저장. 팝업창 출력 조건
+        quickOrder = product
         store.placeOrder(product: product, quantity: 1)
     }
 }
@@ -103,9 +94,10 @@ struct ProductRow_Previews: PreviewProvider {
             ProductRow(product: productSamples[0], quickOrder: .constant(nil))
                 .preferredColorScheme(.dark)
         }
+        ///sizeThatFits를 이용하여 보더라도 약간의 여백을 주도록 추가
         .padding()
+        ///콘텐츠 크기에 맞춰서 프리뷰 컨테이너 크기 조정
         .previewLayout(.sizeThatFits)
-        //sizeThatFits를 이용하여 보더라도 약간의 여백을 주도록 추가
-        //콘텐츠 크기에 맞춰서 프리뷰 컨테이너 크기 조정
+        
     }
 }

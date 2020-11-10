@@ -1,6 +1,6 @@
 import Foundation
-//Strings, Dates를 사용해야 할 때, NSObject의 클래스 계층구조가 필요할때
 
+///Strings, Dates를 사용해야 할 때, NSObject의 클래스 계층구조가 필요할때
 struct Product{
     let id: UUID = UUID()
     
@@ -10,7 +10,7 @@ struct Product{
     let description: String
     var isFavorite: Bool = false
 }
-extension Product: Identifiable {} //프로토콜 채택
+extension Product: Identifiable {} 
 extension Product: Decodable {}
 extension Product: Equatable {}
 
