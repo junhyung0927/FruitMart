@@ -5,6 +5,7 @@ struct OrderCompltedMessasge: View {
         Text("주문 완료 ! ")
             .font(.system(size:24))
             .bold()
-            .kerning(2) //자간 조정
+            ///자간 조정
+            .kerning(2)
     }
 }

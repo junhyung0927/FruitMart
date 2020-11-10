@@ -5,11 +5,13 @@ struct QuantitySelector : View{
     private let softFeedback = UIImpactFeedbackGenerator(style: .soft)
     private let rigidFeedback = UIImpactFeedbackGenerator(style: .rigid)
     
+    /// 수량 선택 가능 범위
     var range: ClosedRange<Int> = 1...20
-    // 수량 선택 가능 범위
+    
     
     var body: some View{
         HStack{
+            ///수량 감소 버튼
             Button(action: {self.changeQuantity(-1) }){
 //                Image(systemName: "minus.circle.fill")
 //                    .imageScale(.large)
@@ -18,20 +20,19 @@ struct QuantitySelector : View{
                     .padding()
             }
             .foregroundColor(Color.gray.opacity(0.5))
-            //수량 감소 버튼
             
+            ///현재 수량을 나타낼 텍스트
             Text("\(quantity)")
                 .bold()
                 .font(Font.system( .title, design: .monospaced))
                 .frame(minWidth: 40, maxWidth: 60)
-            //현재 수량을 나타낼 텍스트
             
+            ///수량 증가 버튼
             Button(action: {self.changeQuantity(1) }) {
                 Symbol("plus.circle.fill", scale: .large)
                     .padding()
             }
             .foregroundColor(Color.gray.opacity(0.5))
-            //수량 증가 버튼
         }
     }
     

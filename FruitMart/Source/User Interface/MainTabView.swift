@@ -2,8 +2,8 @@ import SwiftUI
 
 struct MainTabView: View{
     private enum Tabs {
-        case home, recipe, gallery, myPage
-        //4개의 탭 정의. 탭 뷰의 태그로 활용
+        ///4개의 탭 정의. 탭 뷰의 태그로 활용
+        case home, recipe, gallery, myPage        
     }
     
     @State private var selectedTab: Tabs = .home
