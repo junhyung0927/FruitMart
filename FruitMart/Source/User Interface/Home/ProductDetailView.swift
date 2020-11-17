@@ -15,30 +15,36 @@ struct ProductDetailView: View{
     @State private var showingAlert: Bool = false
     @State private var quantity:Int = 1
     @State private var showingPopup: Bool = false
+    @State private var willAppear: Bool = false
     
     var body: some View {
         VStack(spacing: 0) {
-            ///상품이미지
-            productImage
+            if willAppear{
+                ///상품이미지
+                productImage
+            }
             ///상품 정보를 출력하고 그 상품을 주문하기 위한 뷰
             orderView
         }
         ///팝업 크기 지정 및 dimmed 스타일 적용
-        
-        //.modifier(Popup(size: CGSize(width: 200, height: 200), style: .dimmed, message: Text("팝업")))
         .popup(isPresented: $showingPopup, style: .dimmed) { OrderCompltedMessasge() }
         .edgesIgnoringSafeArea(.top)
         ///alert 수식어 추가
         .alert(isPresented: $showingAlert) { confirmAlert }
+        ///화면이 나타나는 시점에 productImage가 뷰 계층 구조에 추가되도록 구현
+        .onAppear{ self.willAppear = true}
         
     }
     
     var productImage: some View{
-        GeometryReader { _ in
+        let effect = AnyTransition.scale.combined(with: .opacity)
+            .animation(Animation.easeInOut(duration: 0.4).delay(0.05))
+        return GeometryReader { _ in
             //Image(self.product.imageName)
             //     .resizable()
             ResizedImage(self.product.imageName)
         }
+        .transition(effect)
     }
     
     /// 상품 설명과 주문하기 버튼 등을 모두 포함하는 컨테이너

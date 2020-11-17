@@ -15,16 +15,20 @@ struct FavoriteButton: View {
             self.store.toggleFavorite(of: self.product)
         }) {
             
-//            Image(systemName: imageName)
-//                .imageScale(.large)
-//                .foregroundColor(.peach)
-//                .frame(width: 32, height: 32)
-//                .onTapGesture { self.store.toggleFavorite(of: product)}
+            //            Image(systemName: imageName)
+            //                .imageScale(.large)
+            //                .foregroundColor(.peach)
+            //                .frame(width: 32, height: 32)
+            //                .onTapGesture { self.store.toggleFavorite(of: product)}
             
             ///상품에 대한 즐겨찾기 설명 변경
             Symbol(imageName, scale: .large, color: .peach)
                 .frame(width: 32, height: 32)
-                .onTapGesture { self.store.toggleFavorite(of: self.product)}
+                .onTapGesture {
+                    withAnimation{
+                        self.store.toggleFavorite(of: self.product)
+                    }
+                }
         }
     }
     

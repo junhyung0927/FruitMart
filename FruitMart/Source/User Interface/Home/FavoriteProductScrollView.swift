@@ -15,6 +15,7 @@ struct FavoriteProductScrollView: View {
             }
         }
         .padding()
+        .transition(.slide)
     }
     
     var title: some View {
@@ -25,13 +26,17 @@ struct FavoriteProductScrollView: View {
             Symbol("arrowtriangle.up.square")
                 .padding(4)
                 .rotationEffect(Angle(radians: showingImage ? .pi : 0))
-            
             Spacer()
         }
         
         .padding(.bottom, 8)
         ///이미지 표시 여부 변경
-        .onTapGesture { self.showingImage.toggle() }
+        .onTapGesture {
+            withAnimation {
+                self.showingImage.toggle()
+            }
+            
+        }
         
     }
     
@@ -49,6 +54,7 @@ struct FavoriteProductScrollView: View {
                 }
             }
         }
+        .animation(.spring(dampingFraction: 0.78))
     }
     
     func eachProduct(_ product: Product) -> some View {

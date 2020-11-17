@@ -40,9 +40,7 @@ private extension MainTabView{
     }
     
     var recipe: some View {
-        Text("레시피")
-            .tag(Tabs.recipe)
-            .tabItem(image: "book", text: "레시피")
+        RecipeView()
     }
     
     var gallery: some View {
