@@ -31,5 +31,7 @@ struct FruitMartApp: App{
         ]
         
         UITableView.appearance().backgroundColor = .clear
+        
+        UISlider.appearance().thumbTintColor = UIColor(named: "peach")
     }
 }

@@ -26,6 +26,7 @@ struct ProductRow: View {
         .opacity(willAppear ? 1 : 0)
         .animation(.easeInOut(duration: 0.4))
         .onAppear{ self.willAppear = true }
+        .contextMenu{ contextMenu }
     }
 }
 
@@ -85,6 +86,26 @@ private extension ProductRow{
         ///주문 상품 저장. 팝업창 출력 조건
         quickOrder = product
         store.placeOrder(product: product, quantity: 1)
+    }
+    
+    var contextMenu: some View {
+        VStack {
+            ///즐겨찾기 여부 변경
+            Button(action: { self.toggleFavorite() }) {
+                Text("Toggle Favorite")
+                Symbol(self.product.isFavorite ? "heart.fill" : "heart")
+            }
+            
+            ///빠른 주문 가능
+            Button(action: { self.orderProduct() }) {
+                Text("Order Product")
+                Symbol("cart")
+            }
+        }
+    }
+    
+    func toggleFavorite() {
+        store.toggleFavorite(of: product)
     }
 }
 
