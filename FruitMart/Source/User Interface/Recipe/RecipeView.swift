@@ -20,6 +20,21 @@ struct RecipeView: View{
         .background(backgroundGradient)
         .edgesIgnoringSafeArea(.top)
     }
+}
+
+private extension RecipeView {
+    var title: some View {
+        VStack{
+            Text("과일을 활용한 \n 신나는 요리")
+                .font(.system(size: 42)).fontWeight(.thin)
+                .foregroundColor(.white)
+                .padding(.vertical)
+            
+            Text("토마토와 함께하는 금주의 레시피")
+                .font(.headline).fontWeight(.thin)
+                .foregroundColor(.white)
+        }
+    }
     
     var recipePicker: some View{
         HStack{
@@ -47,6 +62,7 @@ struct RecipeView: View{
         }
     }
     
+    //MARK: Action
     func changeIndex(_ num: Int){
         ///새로운 인덱스 (0~4)를 계산하여 반영하고, 관련 뷰에 애니메이션 적용
         withAnimation(.easeInOut(duration: 0.6)){
@@ -97,25 +113,12 @@ struct RecipeView: View{
             endPoint: .bottomTrailing
         )
     }
-
-    var title: some View {
-        VStack{
-            Text("과일을 활용한 \n 신나는 요리")
-                .font(.system(size: 42)).fontWeight(.thin)
-                .foregroundColor(.white)
-                .padding(.vertical)
-            
-            Text("토마토와 함께하는 금주의 레시피")
-                .font(.headline).fontWeight(.thin)
-                .foregroundColor(.white)
-        }
-    }
+    
 }
 
-
-// MARK: - Previews
-//struct RecipeView_Previews: PreviewProvider{
-//    static var previews: some View {
-//        Previews(source: RecipeView())
-//    }
-//}
+//MARK: - Previews
+struct RecipeView_Previews: PreviewProvider{
+    static var previews: some View {
+        Preview(source: RecipeView())
+    }
+}
