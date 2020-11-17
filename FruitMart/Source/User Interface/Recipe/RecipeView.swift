@@ -34,6 +34,8 @@ struct RecipeView: View{
             ResizedImage(recipes[currentIndex].imageName,
                          contentMode: .fit)
                 .padding(.horizontal)
+                .transition(.stripes())
+                .id(currentIndex)
             
             Spacer()
             
@@ -108,7 +110,6 @@ struct RecipeView: View{
                 .foregroundColor(.white)
         }
     }
-
 }
 
 

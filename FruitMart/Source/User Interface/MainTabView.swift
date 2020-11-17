@@ -19,6 +19,8 @@ struct MainTabView: View{
             .accentColor(.primary)
         }
         .accentColor(.peach)
+        ///selectedTab의 값이 recipe인 경우에만 상태 표시줄 숨김 처리
+        .statusBar(hidden: selectedTab == .recipe)
     }
 }
 

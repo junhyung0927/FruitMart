@@ -31,6 +31,9 @@
 		A990D8BD254EA18200450D55 /* ProductRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A990D8BC254EA18200450D55 /* ProductRow.swift */; };
 		A9B2D5C42563DF5F00C6A3F1 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B2D5C32563DF5F00C6A3F1 /* Recipe.swift */; };
 		A9B2D5C82563DFDC00C6A3F1 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B2D5C72563DFDC00C6A3F1 /* RecipeView.swift */; };
+		A9B2D5CB2563E7C400C6A3F1 /* Stripes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B2D5CA2563E7C400C6A3F1 /* Stripes.swift */; };
+		A9B2D5CE2563E99300C6A3F1 /* ShapeClipModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B2D5CD2563E99300C6A3F1 /* ShapeClipModifier.swift */; };
+		A9B2D5D12563EBD600C6A3F1 /* AnyTransitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B2D5D02563EBD600C6A3F1 /* AnyTransitionExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +63,9 @@
 		A990D8BC254EA18200450D55 /* ProductRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRow.swift; sourceTree = "<group>"; };
 		A9B2D5C32563DF5F00C6A3F1 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		A9B2D5C72563DFDC00C6A3F1 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
+		A9B2D5CA2563E7C400C6A3F1 /* Stripes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stripes.swift; sourceTree = "<group>"; };
+		A9B2D5CD2563E99300C6A3F1 /* ShapeClipModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeClipModifier.swift; sourceTree = "<group>"; };
+		A9B2D5D02563EBD600C6A3F1 /* AnyTransitionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTransitionExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				A92B67182557DE560053E7FF /* Popup.swift */,
+				A9B2D5CD2563E99300C6A3F1 /* ShapeClipModifier.swift */,
 			);
 			path = ViewModifier;
 			sourceTree = "<group>";
@@ -95,6 +102,7 @@
 				A9586A54254EB4F800EC9B35 /* Preview.swift */,
 				A92B670C2557D4160053E7FF /* Symbol.swift */,
 				A92B670F2557D9730053E7FF /* ResizedImage.swift */,
+				A9B2D5CA2563E7C400C6A3F1 /* Stripes.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -207,6 +215,7 @@
 			children = (
 				A990D8AD254EA10100450D55 /* ColorExtension.swift */,
 				A990D8B1254EA10B00450D55 /* BundleExtension.swift */,
+				A9B2D5D02563EBD600C6A3F1 /* AnyTransitionExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -317,12 +326,15 @@
 				A9586A60254EC61D00EC9B35 /* Order.swift in Sources */,
 				A92B67102557D9730053E7FF /* ResizedImage.swift in Sources */,
 				A990D890254E9E8A00450D55 /* FruitMartApp.swift in Sources */,
+				A9B2D5CB2563E7C400C6A3F1 /* Stripes.swift in Sources */,
+				A9B2D5D12563EBD600C6A3F1 /* AnyTransitionExtension.swift in Sources */,
 				A92B67192557DE560053E7FF /* Popup.swift in Sources */,
 				A9586A59254EBB1500EC9B35 /* QuantitySelector.swift in Sources */,
 				A9586A55254EB4F800EC9B35 /* Preview.swift in Sources */,
 				A9586A5D254EC1FB00EC9B35 /* FavoriteButton.swift in Sources */,
 				A92B67152557DD010053E7FF /* ShrinkButtonStyle.swift in Sources */,
 				A990D8B2254EA10B00450D55 /* BundleExtension.swift in Sources */,
+				A9B2D5CE2563E99300C6A3F1 /* ShapeClipModifier.swift in Sources */,
 				A9B2D5C42563DF5F00C6A3F1 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
