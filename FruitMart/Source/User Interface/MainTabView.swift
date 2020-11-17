@@ -41,6 +41,8 @@ private extension MainTabView{
     
     var recipe: some View {
         RecipeView()
+            .tag(Tabs.recipe)
+            .tabItem(image: "book", text: "레시피")
     }
     
     var gallery: some View {
