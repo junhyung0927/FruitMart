@@ -54,9 +54,11 @@ private extension MainTabView{
     }
     
     var myPage: some View {
-        Text("마이페이지")
+        MyPage()
             .tag(Tabs.myPage)
             .tabItem(image: "person", text: "마이페이지")
+            ///iOS 14.0에는 이 방식이 적용되지 않는다.
+            .onAppear { UITableView.appearance().separatorStyle = .none }
     }
 }
 

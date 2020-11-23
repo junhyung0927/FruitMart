@@ -36,6 +36,9 @@
 		A9B2D5D12563EBD600C6A3F1 /* AnyTransitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B2D5D02563EBD600C6A3F1 /* AnyTransitionExtension.swift */; };
 		A9B2D5D52563EE5300C6A3F1 /* FruitCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B2D5D42563EE5300C6A3F1 /* FruitCard.swift */; };
 		A9B2D5D92563F02100C6A3F1 /* ImageGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B2D5D82563F02100C6A3F1 /* ImageGallery.swift */; };
+		A9B2D5DD2564AB8800C6A3F1 /* MyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B2D5DC2564AB8800C6A3F1 /* MyPage.swift */; };
+		A9B2D5E12564AE4D00C6A3F1 /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B2D5E02564AE4D00C6A3F1 /* OrderListView.swift */; };
+		A9B2D5E4256B710800C6A3F1 /* OrderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B2D5E3256B710800C6A3F1 /* OrderRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,9 @@
 		A9B2D5D02563EBD600C6A3F1 /* AnyTransitionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTransitionExtension.swift; sourceTree = "<group>"; };
 		A9B2D5D42563EE5300C6A3F1 /* FruitCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitCard.swift; sourceTree = "<group>"; };
 		A9B2D5D82563F02100C6A3F1 /* ImageGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGallery.swift; sourceTree = "<group>"; };
+		A9B2D5DC2564AB8800C6A3F1 /* MyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPage.swift; sourceTree = "<group>"; };
+		A9B2D5E02564AE4D00C6A3F1 /* OrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListView.swift; sourceTree = "<group>"; };
+		A9B2D5E3256B710800C6A3F1 /* OrderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +213,7 @@
 		A990D8AB254EA0E700450D55 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
+				A9B2D5DB2564AB6D00C6A3F1 /* MyPage */,
 				A9B2D5D32563EE4600C6A3F1 /* ImageGallery */,
 				A9B2D5C62563DFC800C6A3F1 /* Recipe */,
 				A990D8BB254EA16C00450D55 /* Home */,
@@ -254,6 +261,16 @@
 				A9B2D5D82563F02100C6A3F1 /* ImageGallery.swift */,
 			);
 			path = ImageGallery;
+			sourceTree = "<group>";
+		};
+		A9B2D5DB2564AB6D00C6A3F1 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				A9B2D5DC2564AB8800C6A3F1 /* MyPage.swift */,
+				A9B2D5E02564AE4D00C6A3F1 /* OrderListView.swift */,
+				A9B2D5E3256B710800C6A3F1 /* OrderRow.swift */,
+			);
+			path = MyPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,10 +356,12 @@
 				A9B2D5D92563F02100C6A3F1 /* ImageGallery.swift in Sources */,
 				A990D8BD254EA18200450D55 /* ProductRow.swift in Sources */,
 				A9586A60254EC61D00EC9B35 /* Order.swift in Sources */,
+				A9B2D5E4256B710800C6A3F1 /* OrderRow.swift in Sources */,
 				A92B67102557D9730053E7FF /* ResizedImage.swift in Sources */,
 				A990D890254E9E8A00450D55 /* FruitMartApp.swift in Sources */,
 				A9B2D5CB2563E7C400C6A3F1 /* Stripes.swift in Sources */,
 				A9B2D5D12563EBD600C6A3F1 /* AnyTransitionExtension.swift in Sources */,
+				A9B2D5E12564AE4D00C6A3F1 /* OrderListView.swift in Sources */,
 				A92B67192557DE560053E7FF /* Popup.swift in Sources */,
 				A9586A59254EBB1500EC9B35 /* QuantitySelector.swift in Sources */,
 				A9B2D5D52563EE5300C6A3F1 /* FruitCard.swift in Sources */,
@@ -352,6 +371,7 @@
 				A990D8B2254EA10B00450D55 /* BundleExtension.swift in Sources */,
 				A9B2D5CE2563E99300C6A3F1 /* ShapeClipModifier.swift in Sources */,
 				A9B2D5C42563DF5F00C6A3F1 /* Recipe.swift in Sources */,
+				A9B2D5DD2564AB8800C6A3F1 /* MyPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
