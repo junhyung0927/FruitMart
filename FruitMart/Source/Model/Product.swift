@@ -11,7 +11,7 @@ struct Product{
     var isFavorite: Bool = false
 }
 extension Product: Identifiable {} 
-extension Product: Decodable {}
+extension Product: Codable {}
 extension Product: Equatable {}
 
 let productSamples = [
