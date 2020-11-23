@@ -3,7 +3,7 @@ import SwiftUI
 struct OrderListView: View {
     ///주문 정보를 가지는 변수
     @EnvironmentObject var store: Store
-    
+    @Environment(\.editMode) var editMode
     
     var body: some View {
         ZStack{
@@ -18,7 +18,8 @@ struct OrderListView: View {
         ///뷰가 전환될 때 애니메이션 적용
         .animation(.default)
         .navigationBarTitle("주문 목록")
-        
+        ///에디트 버튼 추가
+        .navigationBarItems(trailing: editButton)
     }
     
     var emptyOrders: some View {
@@ -40,7 +41,16 @@ struct OrderListView: View {
             ForEach(store.orders) {
                 OrderRow(order: $0)
             }
+            .onDelete(perform: store.deleteOrder(at:))
+            .onMove(perform: store.moveOrder(from:to:))
         }
     }
     
+    var editButton: some View {
+        !store.orders.isEmpty
+            ///주문 내역이 있을 때
+            ? AnyView(EditButton())
+            ///주문 내역이 없을 때
+            : AnyView(EmptyView())
+    }
 }

@@ -39,6 +39,7 @@
 		A9B2D5DD2564AB8800C6A3F1 /* MyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B2D5DC2564AB8800C6A3F1 /* MyPage.swift */; };
 		A9B2D5E12564AE4D00C6A3F1 /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B2D5E02564AE4D00C6A3F1 /* OrderListView.swift */; };
 		A9B2D5E4256B710800C6A3F1 /* OrderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B2D5E3256B710800C6A3F1 /* OrderRow.swift */; };
+		A9B2D5E7256B8E0300C6A3F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B2D5E6256B8E0300C6A3F1 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		A9B2D5DC2564AB8800C6A3F1 /* MyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPage.swift; sourceTree = "<group>"; };
 		A9B2D5E02564AE4D00C6A3F1 /* OrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListView.swift; sourceTree = "<group>"; };
 		A9B2D5E3256B710800C6A3F1 /* OrderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRow.swift; sourceTree = "<group>"; };
+		A9B2D5E6256B8E0300C6A3F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				A990D88F254E9E8A00450D55 /* FruitMartApp.swift */,
+				A9B2D5E6256B8E0300C6A3F1 /* AppDelegate.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				A990D890254E9E8A00450D55 /* FruitMartApp.swift in Sources */,
 				A9B2D5CB2563E7C400C6A3F1 /* Stripes.swift in Sources */,
 				A9B2D5D12563EBD600C6A3F1 /* AnyTransitionExtension.swift in Sources */,
+				A9B2D5E7256B8E0300C6A3F1 /* AppDelegate.swift in Sources */,
 				A9B2D5E12564AE4D00C6A3F1 /* OrderListView.swift in Sources */,
 				A92B67192557DE560053E7FF /* Popup.swift in Sources */,
 				A9586A59254EBB1500EC9B35 /* QuantitySelector.swift in Sources */,
