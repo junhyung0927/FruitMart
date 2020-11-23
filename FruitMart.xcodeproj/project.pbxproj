@@ -40,6 +40,7 @@
 		A9B2D5E12564AE4D00C6A3F1 /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B2D5E02564AE4D00C6A3F1 /* OrderListView.swift */; };
 		A9B2D5E4256B710800C6A3F1 /* OrderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B2D5E3256B710800C6A3F1 /* OrderRow.swift */; };
 		A9B2D5E7256B8E0300C6A3F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B2D5E6256B8E0300C6A3F1 /* AppDelegate.swift */; };
+		A9B2D5EA256B926600C6A3F1 /* AppSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B2D5E9256B926600C6A3F1 /* AppSetting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		A9B2D5E02564AE4D00C6A3F1 /* OrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListView.swift; sourceTree = "<group>"; };
 		A9B2D5E3256B710800C6A3F1 /* OrderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRow.swift; sourceTree = "<group>"; };
 		A9B2D5E6256B8E0300C6A3F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A9B2D5E9256B926600C6A3F1 /* AppSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSetting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 				A990D8B8254EA13600450D55 /* Store.swift */,
 				A9586A5F254EC61D00EC9B35 /* Order.swift */,
 				A9B2D5C32563DF5F00C6A3F1 /* Recipe.swift */,
+				A9B2D5E9256B926600C6A3F1 /* AppSetting.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				A9586A5D254EC1FB00EC9B35 /* FavoriteButton.swift in Sources */,
 				A92B67152557DD010053E7FF /* ShrinkButtonStyle.swift in Sources */,
 				A990D8B2254EA10B00450D55 /* BundleExtension.swift in Sources */,
+				A9B2D5EA256B926600C6A3F1 /* AppSetting.swift in Sources */,
 				A9B2D5CE2563E99300C6A3F1 /* ShapeClipModifier.swift in Sources */,
 				A9B2D5C42563DF5F00C6A3F1 /* Recipe.swift in Sources */,
 				A9B2D5DD2564AB8800C6A3F1 /* MyPage.swift in Sources */,

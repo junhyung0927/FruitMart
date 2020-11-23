@@ -75,6 +75,7 @@ private extension Home {
     ///즐겨찾기 상품 유무 확인
     var showFavorite: Bool{
         !store.products.filter({ $0.isFavorite}).isEmpty
+            && store.appSetting.showFavoriteList
     }
     
 }

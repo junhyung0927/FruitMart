@@ -2,13 +2,15 @@ import Foundation
 
 final class Store : ObservableObject{
     @Published var products: [Product]
+    @Published var appSetting: AppSetting
     ///전체 주문 목록
     @Published var orders: [Order] = [] {
         didSet { saveData(at: ordersFilePath, data: orders) }
     }
     
-    init(filename: String = "ProductData.json") {
+    init(filename: String = "ProductData.json", appSetting: AppSetting = AppSetting()) {
         self.products = Bundle.main.decode(filename: filename, as : [Product].self)
+        self.appSetting = appSetting 
         self.orders = loadData(at: ordersFilePath, type: [Order].self)
     }
 }
